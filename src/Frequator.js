@@ -1155,7 +1155,7 @@ function getShortURL() {
     "www." == window.location.hostname.slice(0, 4)
       ? window.location.hostname.slice(4)
       : window.location.hostname;
-  return window.location.protocol + "//" + a + "/Frequator-WApp/index.html#" + constructHash();
+  return window.location.protocol + "//" + a + "/index.html#" + constructHash();
 }
 function constructHash() {
   var a = 12 * Math.log2(window.sliderFreq / 440) + 49;
