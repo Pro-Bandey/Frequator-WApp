@@ -1409,7 +1409,7 @@ function init() {
   window.slider_jq = $("#slider");
   window.freqReadout = new FrequencyReadout("#freq-readout");
   window.playIndicator = new PlayIndicator(
-    document.getElementById("play-indicator")
+    document.getElementById("pp-indicator")
   );
   window.balanceControl = new BalanceControl(
     document.getElementById("balance-control"),

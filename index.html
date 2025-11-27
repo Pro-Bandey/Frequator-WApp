@@ -2,84 +2,100 @@
 <html lang="en">
 
 <head>
+	<title>Frequator WApp - generate pure tones of any frequency</title>
+	<!-- Meta Data -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<script>
-		if (window.matchMedia && window.matchMedia('(max-device-width: 390px)').matches) {
-			viewport = document.querySelector('meta[name=viewport]');
-			if (viewport) viewport.setAttribute('content', 'width=390');
-		}
-	</script>
-	<title>Frequator WApp - generate pure tones of any frequency</title>
+	<script>if (window.matchMedia && window.matchMedia('(max-device-width: 390px)').matches) { viewport = document.querySelector('meta[name=viewport]'); if (viewport) viewport.setAttribute('content', 'width=390'); }</script>
+
+	<!-- All  Styles Libraries, favicons and stylesheets -->
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' rel='stylesheet' />
 	<link rel="stylesheet" href="./src/jquery-ui.css">
-	<script src="./src/jquery.min.js"></script>
-	<script src="./src/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="./src/Frequator.css">
 	<link rel="shortcut icon" href="./src/favicon.png">
 	<link rel="apple-touch-icon" href="./src/apple.png" sizes="180x180">
+
+	<!-- All Ui and functions script  -->
 	<script src="./src/Frequator.js"></script>
-
-	<!-- Removed AdSense cookie logic and script -->
-
+	<script src="./src/jquery.min.js"></script>
+	<script src="./src/jquery-ui.min.js"></script>
 	<script async src="./src/googletagmanager.js"></script>
 </head>
 
 <body>
-
-	<div id=wrapper>
+	<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+		<symbol id="svg-Lspeaker-icon" viewBox="0 0 40 38">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+				<g transform="translate(-84.748 -76.596)">
+					<g transform="matrix(-.28222 0 0 .28222 848.8 -82.759)" fill="inherit">
+						<path d="m2645.1 696.21v-131.56l-32.764 33.843h-41.068l0.028 63.916 41.054-0.0201z"
+							fill-rule="evenodd"></path>
+						<path transform="matrix(.9375 0 0 .9375 -5.8967 -8.2345)"
+							d="m2852 645.99-9.1192 8.916c6.4339 6.5121 10.396 15.473 10.396 25.402 0 10.415-4.3627 19.759-11.361 26.334l9.125 8.9199c9.276-8.9155 15.072-21.426 15.072-35.254 0-13.348-5.3964-25.473-14.113-34.318z"
+							fill-rule="evenodd"></path>
+						<path transform="matrix(.9375 0 0 .9375 -5.8967 -8.2345)"
+							d="m2872 626.46-9.1211 8.916c11.358 11.549 18.361 27.396 18.361 44.926 0 18.014-7.3974 34.248-19.314 45.869l9.127 8.9199c14.198-13.957 23.023-33.36 23.023-54.789 0-20.947-8.4354-39.96-22.076-53.842z"
+							color="#000000" color-rendering="auto" dominant-baseline="auto" image-rendering="auto"
+							shape-rendering="auto" solid-color="#000000"></path>
+					</g>
+				</g>
+			</svg>
+		</symbol>
+		<symbol id="svg-Rspeaker-icon" viewBox="0 0 40 38">
+			<use xlink:href="#svg-Lspeaker-icon" width="40" transform="translate(40 0) scale(-1,1)"></use>
+		</symbol>
+		<symbol id="svg-balance-icon" viewBox="0 0 92 38">
+			<use xlink:href="#svg-Lspeaker-icon" width="40"></use>
+			<use xlink:href="#svg-Rspeaker-icon" width="40" transform="translate(48 0)"></use>
+		</symbol>
+	</svg>
+	<div class="wrapper">
 		<h1>Frequator WApp</h1>
-
-		<div id="generator-ui">
-
-			<button class=button id="play-button" title="Play/Stop [Space]" tabindex=10>Play</button>
-			<span id="play-indicator" class="stopped"></span>
-
-			<div id="slider" style="margin: 40px 0px 18px 0px"></div>
+		<div class="frequator-ui">
+			<button class="pp-btn" id="play-button" title="Play/Stop [Space]" tabindex="10">Play</button>
+			<span id="pp-indicator" class="stopped"></span>
+			<div id="slider" class="slider"></div>
 			<div class="controls">
-				<span class=control-group>
-					<label id="volume-slider-label"></label>
-					<span id="volume-slider"></span>
-					<span id="volume-readout" style="margin-right: 20px"></span>
-					<button id="balance-control" title="balance" tabindex=40><svg viewBox="0 0 92 38">
+				<span class="control-group">
+					<label class="volume-slider-label"></label>
+					<span id="volume-slider" class="volume-slider"></span>
+					<span id="volume-readout" class="volume-readout"></span>
+					<button id="balance-control" class="balance-control" title="balance" tabindex="40"><svg
+							viewBox="0 0 92 38">
 							<use id="balance-control-L-speaker-icon" xlink:href="#svg-Lspeaker-icon" width="40" />
 							<use id="balance-control-R-speaker-icon" xlink:href="#svg-Rspeaker-icon" width="40"
 								transform="translate(48 0)" />
-						</svg></button>
-					<span class=separator style="margin-right: 55px"></span>
+						</svg>
+					</button>
+					<button name="wave-selector" class="wave-selector" id="wave-selector" title="wave type selector" tabindex="300"></button>
 				</span>
-				<span class=control-group>
-					<button class="small-button" id="octave-down-button" title="− 1 octave (frequency ÷ 2)"
-						style="margin-right: 10px" tabindex=60>&times;½</button>
-					<button class="freq-button" id="freq-down-button" title="&minus; 1 Hz [Shift+←]" tabindex=70></button>
-					<span id="freq-readout" tabindex=80></span>
-					<button class="freq-button" id="freq-up-button" title="+ 1 Hz [Shift+→]" tabindex=90></button>
-					<button class="small-button" id="octave-up-button" title="+ 1 octave (frequency &times; 2)"
-						style="margin-left: 10px;" tabindex=100>&times;2</button>
-					<span class=separator></span>
+				<span class="control-group">
+					<button class="small-button" id="octave-down-button" title="− 1 octave (frequency ÷ 2)" style="margin-right: 10px" tabindex="60">&times;½</button>
+					<button class="freq-button" id="freq-down-button" title="&minus; 1 Hz [Shift+←]" tabindex="70"></button>
+					<span id="freq-readout" class="freq-readout" tabindex="80"></span>
+					<button class="freq-button" id="freq-up-button" title="+ 1 Hz [Shift+→]" tabindex="90"></button>
+					<button class="small-button" id="octave-up-button" title="+ 1 octave (frequency &times; 2)" style="margin-left: 10px;" tabindex="100">&times;2</button>
 				</span>
-				<span class=control-group>
-					<label id="note-selector-label"></label>
-					<button name="note-selector" id="note-selector" title="note selector" style="width: 110px;"
-						tabindex=110></button>
+				<span class="control-group">
+					<label class="note-selector-label"></label>
+					<button name="note-selector" class="note-selector" id="note-selector" title="note selector" style="width: 110px;" tabindex="110"></button>
+					<button name="get-link" class="get-link" id="get-link" tabindex="310">Copy link</button>
 				</span>
-				<span class=control-group style="margin-right: 0px">
-					<button name="wave-selector" id="wave-selector" title="wave type selector"
-						style="width: 31.5px; margin-right: 20px; padding-left: 5px;" tabindex=300></button>
-					<button name="get-link" id="get-link" tabindex=310>Copy link</button>
-				</span>
-			</div>
 
+			</div>
 		</div>
 
 		<!-- Entire AdSense banner section removed -->
 		<div class="warning">
 			<strong>You can damage your hearing or your speakers if you play tones at extreme volumes.</strong>
-			People can&apos;t hear sounds &lt; 20 Hz and &gt; 10,000 Hz very well. If you turn up the volume on your device
+			People can&apos;t hear sounds &lt; 20 Hz and &gt; 10,000 Hz very well. If you turn up the volume on your
+			device
 			to compensate,
 			you could expose yourself to harmful sound levels and your speakers to harmful currents.
 			To be safe, note the volume level that allows you to listen to a 1,000 Hz tone without discomfort and do not
 			stray too far
-			above this level, even if you can&apos;t hear much &minus; especially in the high range, where your hearing is the most
+			above this level, even if you can&apos;t hear much &minus; especially in the high range, where your hearing
+			is the most
 			fragile.
 		</div>
 
@@ -109,9 +125,11 @@
 
 		<h2>What can I use this tone generator for?</h2>
 		<p>
-			Tuning instruments, science experiments (<i>what&apos;s the resonant frequency of this wineglass?</i>), testing
+			Tuning instruments, science experiments (<i>what&apos;s the resonant frequency of this wineglass?</i>),
+			testing
 			audio equipment
-			(<i>how low does my subwoofer go?</i>), testing your hearing (<i>what&apos;s the highest frequency you can hear?
+			(<i>how low does my subwoofer go?</i>), testing your hearing (<i>what&apos;s the highest frequency you can
+				hear?
 				are there frequencies
 				you can hear in only one ear?</i>).
 		</p>
@@ -129,7 +147,8 @@
 		</p>
 		<p>
 			<b>Alzheimer&apos;s disease.</b>
-			Some scientists from MIT are seriously investigating the possibility that <a href="./index.html">40 Hz tones</a>
+			Some scientists from MIT are seriously investigating the possibility that <a href="./index.html">40 Hz
+				tones</a>
 			may reverse some of the molecular changes in the brains of Alzheimer&apos;s patients.
 			Initial studies on transgenic mice showed promising results, but (as is often the case) early-stage human
 			trials paint
@@ -144,11 +163,12 @@
 
 
 		<footer id="footer">
-			Created by <a href="https://m-ramzan-ch.blogspot.com/" target="_blank">M Ramzan Ch</a>
-			<span class="sep" style="margin: 0 3px; color: #ddd">|</span>
-			<a href="./src/tut.html">About</a>
-			<span class="sep" style="margin: 0 3px; color: #ddd">|</span>
-			<a href="./src/prvacy.html">Privacy policy</a>
+			&copy; 2025 MicroResearch Corporation<sup>&reg;</sup>. All Rights Reserved.<br>
+			Created by <a href="https://m-ramzan-ch.blogspot.com/" target="_blank">M Ramzan Ch </a>With ♥
+			<span class="sep" style="margin: 0 3px; color: #ddd">|</span><a href="./src/tut.html">Blog</a>
+			<span class="sep" style="margin: 0 3px; color: #ddd">|</span><a href="./src/prvacy.html">Privacy Policy</a>
+			<span class="sep" style="margin: 0 3px; color: #ddd">|</span><a target="_blank"
+				href="https://m-ramzan-ch.blogspot.com/#contact">Contact Me</a>
 		</footer>
 
 	</div>
