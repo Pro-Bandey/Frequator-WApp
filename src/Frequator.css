@@ -1,3 +1,8 @@
+@font-face {
+    font-family:ScienceGothic;
+    src: url(./font/ScienceGothic.ttf);
+}
+
 html {
   min-height: 100%
 }
@@ -6,7 +11,7 @@ body {
   margin: 0;
   background-image: -webkit-linear-gradient(top, #78912b, #658b33 42%, #708d2d 82%, #6d8b24);
   background-attachment: fixed;
-  font-family: "Open Sans", sans-serif;
+  font-family:ScienceGothic;
   font-size: 15px
 }
 
