@@ -12,6 +12,7 @@ Playing tones at **extreme volumes** can damage **your hearing** or **your speak
   - Subject speakers to **dangerous electrical currents**
 
 ### ✅ Stay Safe
+
 - Find a **comfortable volume level** using a **1,000 Hz tone**
 - Do **not exceed this level**, even if:
   - You can’t hear much sound
@@ -22,9 +23,11 @@ Playing tones at **extreme volumes** can damage **your hearing** or **your speak
 ## ▶️ How to Use the Tone Generator
 
 ### 🎶 Play Controls
+
 - **Play / Pause:** Click **Play** or press **Space**
 
 ### 🎚️ Frequency Adjustment
+
 - **Drag the slider** or press **← / →**
 - **±1 Hz:** Buttons or **Shift + ← / →**
 - **±0.01 Hz:** **Ctrl + ← / →**
@@ -34,13 +37,16 @@ Playing tones at **extreme volumes** can damage **your hearing** or **your speak
   - **×2** → Double the frequency
 
 ### 🌊 Wave Types
+
 Switch from a **sine wave (pure tone)** to:
+
 - Square
 - Triangle
 - Sawtooth  
-by clicking the **Wave** button
+  by clicking the **Wave** button
 
 ### 🎛️ Mix Multiple Tones
+
 - Open the **Frequator WApp** in **multiple browser tabs**
 
 ---
@@ -48,15 +54,18 @@ by clicking the **Wave** button
 ## 🧪 What Can You Use This For?
 
 ### 🎼 Music & Audio
+
 - Instrument tuning
 - Testing speakers and headphones
 - Finding subwoofer frequency limits
 
 ### 🔬 Science & Learning
+
 - Resonance experiments  
-  *(e.g., finding the resonant frequency of a wine glass)*
+  _(e.g., finding the resonant frequency of a wine glass)_
 
 ### 👂 Hearing Tests
+
 - Determine the **highest frequency** you can hear
 - Detect **ear-specific frequency perception**
 
@@ -67,15 +76,18 @@ by clicking the **Wave** button
 If you have **pure-tone tinnitus**, this tool can help identify its frequency.
 
 ### Why It Helps
+
 - Enables better **masking sound selection**
 - Supports **frequency discrimination training**
 
 ### Important Tip
+
 When you find a matching tone:
+
 - Also test:
   - **One octave higher (×2)**
   - **One octave lower (×½)**
-  
+
 > Tones one octave apart are often confused.
 
 ---
@@ -94,8 +106,8 @@ Researchers at **MIT** are studying whether **40 Hz tones** can reverse certain 
 
 ## © Legal & Credits
 
-© **2025 MicroResearch Corporation®**  
+© **2025 [MainRoute Core](https://mainroute-core.github.io)®**  
 All Rights Reserved.
 
-Created by **[M Ramzan Ch](https://m-ramzan-ch.blogspot.com/)** with ❤️  
-[Blog](https://pro-bandey.github.io/Frequator-WApp/src/tut.html) • [Privacy Policy](https://pro-bandey.github.io/Frequator-WApp/src/prvacy.html) • [Contact Me](https://m-ramzan-ch.blogspot.com/#contact)
+Created by **[Pro Bandey](https://github.com/Pro-Bandey)** with ❤️  
+[Blog](https://pro-bandey.github.io/Frequator-WApp/src/tut.html) • [Privacy Policy](https://pro-bandey.github.io/Frequator-WApp/src/prvacy.html)
