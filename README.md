@@ -106,7 +106,7 @@ Researchers at **MIT** are studying whether **40 Hz tones** can reverse certain 
 
 ## © Legal & Credits
 
-© **2025 [MainRoute Core](https://mainroute-core.github.io)®**  
+© **2025**  
 All Rights Reserved.
 
 Created by **[Pro Bandey](https://github.com/Pro-Bandey)** with ❤️  
